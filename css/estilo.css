@@ -4,7 +4,8 @@
 }
 
 body.corpo{
-    background-color: #1a237e;
+    background-image: url(../images/wallhaven-727431.jpg);
+    background-repeat: round;
 }
 .btn{
     background-color: #1a237e;
