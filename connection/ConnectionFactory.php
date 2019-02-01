@@ -2,28 +2,34 @@
 
 abstract class ConnectionFactory{
     
-    private $conn;
-    private $username = "event";
-    private $password = "event123";
+    private static $conn;
     
     public static function getConnetion(){
         
         try{
-            $conn = new PDO('mysql:host=mysql995.umbler.com:41890;dbname=eventdivulgation', $this->username, $this->password);
+            $conn = new PDO('mysql:host=localhost;dbname=eventdivulgation', 'event', 'event123');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             return $conn;
         } catch (PDOException $e) {
             echo 'Erro: '.$e->getMessage();
             return null;
         }
         
-        
-        
     }
+}
     
-    
-    
+
+
+
+$connection = ConnectionFactory::getConnetion();
+
+if(is_resource($connection) && get_resource_type($connection) === 'mysql link')
+{
+    echo 'conectado';
+}
+else
+{
+    echo 'Não conectado';
 }
 
-$conn = ConnectionFactory::getConnetion();
-echo 'Connection: '.$conn;
