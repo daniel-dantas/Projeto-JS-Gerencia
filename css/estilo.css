@@ -1,15 +1,16 @@
-
+html{
+    height: 100%;
+}
 .card-panel{
     margin-top: 75px;
 }
 
 body.corpo{
     background-image: url(../images/wallhaven-727431.jpg);
+    height: 100%;
     background-repeat: round;
 }
-.btn{
-    background-color: #1a237e;
-}
+
 .btn:hover{
     background-color: #1a237e;
 }

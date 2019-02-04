@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="../css/login.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>
-<body class="indigo darken-4 valign-wrapper">
-	<div class="container">
-		<div class="container">
-		<div class="row indigo lighten-5">
-			<div class="row"></div>
-			<div class="col m7 offset-m5"><img class="responsive-img" src="../images/enter.png"></div>
-			<div class="input-field col m4 offset-m4">
-				<input id="userName" type="text" class="validate" oninput="verificacao()">
-				<label for="userName">user name</label>
-			</div>
-			<div class="input-field col m4 offset-m4">
-				<input id="password" type="password" class="validate" oninput="verificacao()">
-				<label for="password">password</label>
-			</div>	
-			<div class="col s7 m7 l7 offset-m5 offset-l5"><a id="button" class="waves-effect waves-light btn  disabled">entrar</a></div>
-			<div class="row"></div>
-			<div class="col m3 offset-m2"><a>cadastrar-se</a></div>
-			<div class="col m4 offset-m3"><a>recuperar senha</a></div>
-			<div class="row"></div>
-		</div>
-		</div>
-	</div>
-	<script src="../js/login.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<!--TEM QUE COLOCAR ISSO-->
-	<!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
-</body>
+    <head>
+        <title>Event Divulgation &COPY;</title>
+        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/materialize.css" />
+    </head>
+    <body class="indigo darken-4 valign-wrapper">
+        <form action="login.php" class="container" method="POST">
+
+            <div class="container">
+                <div class="row indigo lighten-5">
+                    <div class="row"></div>
+                    <div class="col m7 offset-m5"><img class="responsive-img" src="../images/enter.png"></div>
+                    <div class="input-field col m4 offset-m4">
+                        <input id="userName" name="userName" type="text" class="validate" oninput="verificacao()">
+                        <label for="userName">user name</label>
+                    </div>
+                    <div class="input-field col m4 offset-m4">
+                        <input id="password" name="password" type="password" class="validate" oninput="verificacao()">
+                        <label for="password">password</label>
+                    </div>	
+                    <div class="col s7 m7 l7 offset-m5 offset-l5"><button id="button" type="submit" class="waves-effect waves-light indigo darken-4 btn  disabled">entrar</button></div>
+                    <div class="row"></div>
+                    <div class="col m3 offset-m2"><a href="cadastrar.html">Cadastrar-se</a></div>
+                    <div class="col m4 offset-m3"><a>recuperar senha</a></div>
+                    <div class="row"></div>
+                </div>
+            </div>
+
+        </form>
+        <script src="../js/login.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!--TEM QUE COLOCAR ISSO-->
+        <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+    </body>
 </html>

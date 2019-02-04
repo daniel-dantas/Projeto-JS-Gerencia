@@ -2,8 +2,23 @@
 
 require_once '../dao/UsuarioDAO.php';
 
-$user = new Usuario($_POST['nome'], $_POST['sobrenome'], $_POST['cidade'], $_POST['estado'], $_POST['email'], $_POST['usuario'], $_POST['senha']);
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$cidade = $_POST['cidade'];
+$estado = $_POST['estado'];
+$email = $_POST['email'];
+$usuario = $_POST['usuario'];
+$senha = $_POST['senha'];
 
-UsuarioDAO::inserir($user);
+if (empty($nome) || empty($sobrenome) || empty($cidade) || empty($estado) || empty($email) || empty($usuario) || empty($senha)) {
+    
+} else {
+    $user = new Usuario($nome, $sobrenome, $cidade, $estado, $email, $usuario, $senha);
+    UsuarioDAO::inserir($user);
+}
+
+
+
+
 
 
