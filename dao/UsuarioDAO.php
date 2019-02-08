@@ -1,6 +1,5 @@
 <?php
 
-
 require_once '../model/Usuario.php';
 
 abstract class UsuarioDAO {
@@ -8,7 +7,7 @@ abstract class UsuarioDAO {
     public static function inserir(Usuario $usuario) {
 
         try {
-            
+
             include '../connection/ConnectionFactory.php';
 
             $conn = getConnection();
@@ -33,4 +32,19 @@ abstract class UsuarioDAO {
         }
     }
 
+    public static function verificarUserName($userName) {
+        include '../connection/ConnectionFactory.php';
+        $conn = getConnection();
+        $consulta = $conn->query("SELECT * FROM usuario WHERE usuario=$userName;");
+        
+        if(empty($consulta)){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    
+    
+    
 }
