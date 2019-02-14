@@ -11,10 +11,10 @@ $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 
 if (UsuarioDAO::verificarUserName($usuario)) {
-    echo 'Usuario existente';
-} else {
     $user = new Usuario($nome, $sobrenome, $cidade, $estado, $email, $usuario, $senha);
     UsuarioDAO::inserir($user);
+} else {
+    echo 'Usuario existente';
 }
 
 
