@@ -1,5 +1,5 @@
 <?php
-include '../util/validacao_cookies.php';
+
 
 $userName = $_POST['userName'];
 $password = $_POST['password'];
@@ -24,6 +24,5 @@ if($linhas == 0){
         setcookie("senha", $dados['senha']);
         
         header("Location: home.html");
-        
     }
 }

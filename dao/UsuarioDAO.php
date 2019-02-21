@@ -21,10 +21,12 @@ abstract class UsuarioDAO {
             $stmt->bindValue(5, $usuario->getEmail());
             $stmt->bindValue(6, $usuario->getUsuario());
             $stmt->bindValue(7, $usuario->getSenha());
-            
-            $stmt->execute();
-            
-            
+
+            if ($stmt->execute()) {
+                echo 'Salvo com sucesso!';
+            } else {
+                echo 'Erro ao salvar!';
+            }
         } catch (PDOException $ex) {
             $ex->getMessage();
         }

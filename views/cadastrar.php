@@ -1,5 +1,5 @@
 <?php
-include '../util/validacao_cookies.php';
+
 require_once '../dao/UsuarioDAO.php';
 
 $nome = $_POST['nome'];
@@ -10,10 +10,12 @@ $email = $_POST['email'];
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 
-$user = new Usuario($nome, $sobrenome, $cidade, $estado, $email, $usuario, $senha);
-UsuarioDAO::inserir($user);
-
-
+if (UsuarioDAO::verificarUserName($usuario)) {
+    $user = new Usuario($nome, $sobrenome, $cidade, $estado, $email, $usuario, $senha);
+    UsuarioDAO::inserir($user);
+} else {
+    echo 'Usuario existente';
+}
 
 
 

@@ -1,10 +1,10 @@
 <?php
 
-if (isset($_COOKIE["usuario"])) {
-    $userName = $_COOKIE["usuario"];
+if (isset($_COOKIE["userName"])) {
+    $userName = $_COOKIE["userName"];
 }
-if (isset($_COOKIE["senha"])) {
-    $password = $_COOKIE["senha"];
+if (isset($_COOKIE["password"])) {
+    $password = $_COOKIE["password"];
 }
 
 if (empty($userName) OR empty($password)) {
@@ -21,19 +21,20 @@ if (empty($userName) OR empty($password)) {
         $passBD = $dados["senha"];
 
         if ($passBD != $password) {
-            setcookie("usuario");
-            setcookie("senha");
+            setcookie("userName");
+            setcookie("password");
 
-            header("Location: login.html");
+            echo "Você não efetuou login";
             exit();
         }
     } else {
-        setcookie("usuario");
-        setcookie("senha");
-        header("Location: login.html");
+        setcookie("userName");
+        setcookie("password");
+        echo "Você não efetuou login";
         exit();
     }
 }else{
-    header("Location: login.html");
+    echo "Você não efetuou o login";
+    
     mysqli_close($con);
 }
