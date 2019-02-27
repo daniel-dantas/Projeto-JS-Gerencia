@@ -3,9 +3,14 @@ html {
 }
 
 body{
+	background-image: url(../images/wallhaven-727431.jpg);
+	background-repeat: round;
 	height: 100%;
 }
 
 a{
 	cursor: pointer;
+}
+img.responsive-img{
+	margin-top: 50px;
 }

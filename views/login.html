@@ -7,27 +7,57 @@
     </head>
     <body class="indigo darken-4 valign-wrapper">
         <form action="login.php" class="container" method="POST">
+        <div class="row">
 
-            <div class="container">
+            <div class="col s12 m4"></div>
+            <div class="col s12 m4">
                 <div class="row indigo lighten-5">
-                    <div class="row"></div>
-                    <div class="col m7 offset-m5"><img class="responsive-img" src="../images/enter.png"></div>
-                    <div class="input-field col m4 offset-m4">
+                    
+                    <center><img class="responsive-img" src="../images/enter.png"></center>
+
+                    <div class="row">
+                        
+                    <div class="col s1"></div>
+
+
+                    <div class="col s10">
+                        
+
+                        <div class="input-field col s12 ">
                         <input id="userName" name="userName" type="text" class="validate" oninput="verificacao()">
                         <label for="userName">user name</label>
                     </div>
-                    <div class="input-field col m4 offset-m4">
+                    <div class="input-field col s12">
                         <input id="password" name="password" type="password" class="validate" oninput="verificacao()">
                         <label for="password">password</label>
-                    </div>	
-                    <div class="col s7 m7 l7 offset-m5 offset-l5"><button id="button" type="submit" class="waves-effect waves-light indigo darken-4 btn  disabled">entrar</button></div>
-                    <div class="row"></div>
-                    <div class="col m3 offset-m2"><a href="cadastrar.html">Cadastrar-se</a></div>
-                    <div class="col m4 offset-m3"><a href="recuperar-senha.html">recuperar senha</a></div>
-                    <div class="row"></div>
+                    </div>
+                    <br>
+                    <br>  
+                    <center><button id="button" type="submit" class="waves-effect waves-light indigo darken-4 btn  disabled">entrar</button></center>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <center>
+                        <div class="col s12 m6">
+                            <a href="cadastrar.html">Cadastra-se</a>
+                        </div>
+                        <div class="col s12 m6">
+                            <a href="recuperar-senha.html">Recuperar senha</a>
+                        </div>
+                        </center>
+                    </div>
+
+                    </div>
+
+
+                    
+                        <div class="col s1"></div>
+                    </div>
+                    
                 </div>
             </div>
-
+            <div class="col s12 m4"></div>
+        </div>
         </form>
         <script src="../js/login.js"></script>
         <script src="../js/materialize.js"></script>
