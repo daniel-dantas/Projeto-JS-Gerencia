@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Event</title>
+	<link rel="stylesheet" href="../css/materialize.css">
+	<link rel="stylesheet" href="../css/criarevento.css">
+	<meta charset="utf-8">
+</head>
+<body class="valign-wrapper">
+	<!--COLOCAR UM TAMANHO MÁX DE CARACTERES NO TEXT AREA
+		OBS: O NATURAL DO MATERIALIZE CONTA QUEBRAS DE LINHA COMO UM CARACTERE-->
+	<div class="container">
+		<div class="container">
+			<div class="row"></div>
+			<div class="row"></div>
+			<div class="row indigo lighten-5">
+				<div class="
+				row"></div>
+				<center><img class="responsive-img" src="../images/new-product.png"></center>
+				<form>
+					<div class="input-field col m10 offset-m1">
+						<input id="Nome" name="Nome" type="text" class="validate" oninput="">
+						<label for="Nome">Nome do Evento</label>
+					</div>
+					<div class="input-field col m10 offset-m1">
+						<textarea id="descricao" class="materialize-textarea"></textarea>
+						<label for="descricao">Descrição</label>
+					</div>
+					<div class="col m10 offset-m1">
+						<div class="file-field input-field">
+					    	<div class="btn">
+					    		<span>File</span>
+					       		<input type="file">
+					     	</div>
+						    <div class="file-path-wrapper">
+						       	<input class="file-path validate" type="text">
+						    </div>
+					    </div>
+					</div>
+					<div class="col m1 offset-m3">
+						<label>
+							<input class="with-gap" name="custo" type="radio" checked />
+							<span>Grátis</span>
+						</label>
+					</div>
+					<div class="col m1 offset-m2">
+						<label>
+							<input class="with-gap" name="custo" type="radio" />
+							<span>Pago</span>
+						</label>
+					</div>
+				</form>
+			    <div class="row"></div>
+			</div>
+		</div>
+	</div>
+	<!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+	<script src="../js/materialize.js"></script>
+</body>
+</html>
