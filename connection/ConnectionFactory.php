@@ -6,9 +6,9 @@
  */
 function getConnection() {
 
-    $dsn = 'mysql:host=mysql995.umbler.com:41890;dbname=eventdivulgation';
-    $user = 'event';
-    $pass = 'event123';
+    $dsn = 'mysql:host=localhost:3306;dbname=eventdivulgation';
+    $user = 'root';
+    $pass = '';
     
     
     try {

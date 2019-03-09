@@ -1,18 +1,20 @@
 <?php
 
 require_once '../model/Usuario.php';
-
+require_once '../connection/ConnectionFactory.php';
 abstract class UsuarioDAO {
+
+    
+
 
     public static function inserir(Usuario $usuario) {
 
-        try {
 
-            include '../connection/ConnectionFactory.php';
+        try {
 
             $conn = getConnection();
 
-            $stmt = $conn->prepare('INSERT INTO usuario (nome, sobrenome, cidade, estado, email, usuario, senha) VALUES (?,?,?,?,?,?,?)');
+            $stmt = $conn->prepare('INSERT INTO usuario (nome, sobrenome, cidade, estado, email, username, senha) VALUES (?,?,?,?,?,?,?)');
 
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2, $usuario->getSobrenome());
@@ -23,9 +25,20 @@ abstract class UsuarioDAO {
             $stmt->bindValue(7, $usuario->getSenha());
 
             if ($stmt->execute()) {
-                echo 'Salvo com sucesso!';
+                setcookie("nome", $dados['nome']);
+                setcookie("sobrenome", $dados['sobrenome']);
+                setcookie("cidade", $dados['cidade']);
+                setcookie("estado", $dados['estado']);
+                setcookie("email", $dados['email']);
+                setcookie("usuario", $dados['usuario']);
+                setcookie("senha", $dados['senha']);
+                header('location: ../views/home.php');
             } else {
-                echo 'Erro ao salvar!';
+                
+                
+                header('location: ../views/cadastrar.html');
+                
+                
             }
         } catch (PDOException $ex) {
             $ex->getMessage();
@@ -33,8 +46,9 @@ abstract class UsuarioDAO {
     }
 
     public static function verificarUserName($userName) {
-        include '../connection/ConnectionFactory.php';
+    
         $conn = getConnection();
+
         $consulta = $conn->query("SELECT * FROM usuario WHERE usuario=$userName;");
         
         if(empty($consulta)){
@@ -45,6 +59,6 @@ abstract class UsuarioDAO {
         
     }
     
-    
+   
     
 }

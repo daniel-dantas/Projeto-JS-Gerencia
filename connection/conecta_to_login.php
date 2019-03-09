@@ -1,10 +1,11 @@
 <?php
 
-$servidor = "mysql995.umbler.com:41890";
-$usuario_bd = "event";
-$senha_bd = "event123";
+
+$servidor = "localhost";
+$usuario_bd = "root";
+$senha_bd = "";
 $banco = "eventdivulgation";
 
-$con  = mysqli_connect($servidor, $usuario_bd, $senha_bd, $banco);
+$con = mysqli_connect($servidor, $usuario_bd, $senha_bd, $banco);
 
 ?>

@@ -5,7 +5,9 @@ $userName = $_POST['userName'];
 $password = $_POST['password'];
 
 include "../connection/conecta_to_login.php";
-$resultado = mysqli_query($con, "SELECT * FROM usuario WHERE usuario='$userName'");
+
+
+$resultado = mysqli_query($con, "SELECT * FROM usuario WHERE username='$userName'");
 $linhas = mysqli_num_rows($resultado);
 
 if($linhas == 0){
@@ -20,9 +22,9 @@ if($linhas == 0){
         setcookie("cidade", $dados['cidade']);
         setcookie("estado", $dados['estado']);
         setcookie("email", $dados['email']);
-        setcookie("usuario", $dados['usuario']);
+        setcookie("username", $dados['username']);
         setcookie("senha", $dados['senha']);
         
-        header("Location: home.html");
+        header("Location: home.php");
     }
 }
