@@ -12,11 +12,8 @@ function opcaoDoPreco () {
 	}else {
 		if (gambiarra == 0) {
 			formulario.innerHTML += newinput
+			radio[1].checked = true
 			gambiarra = 1
 		}
 	}
-}
-
-function segundoClick (elemento) {
-	elemento.click()
 }
