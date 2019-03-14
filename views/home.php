@@ -1,5 +1,5 @@
 
-<?php include "../util/validacao_cookies.php"; ?>
+<?php include "../util/validacao_cookies.php";?>
 
 
 
@@ -26,7 +26,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="home.php">Inicio</a></li>
-                    <li><a href="#">Meus eventos</a></li>
+                    <li><a href="criarevento.html">Meus eventos</a></li>
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opções de Conta<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>

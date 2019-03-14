@@ -1,34 +1,44 @@
 <?php
 
 include '../util/config_upload.php';
+require_once '../dao/EventoDAO.php';
+
+
+
+
+
+if (isset($_POST["preco"])) {
+    $preco = doubleval($_POST["preco"]);
+} else {
+    $preco = 0;
+}
 
 $nome = $_POST["nome"];
 $descricao = $_POST["descricao"];
 $usuario = $_COOKIE["username"];
+$cidade = $_POST["cidade"];
+$endereco = $_POST["endereco"];
+$custo = $_POST["custo"];
+$file;
 
+if (isset($_FILES['arquivo'])) {
+    date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
 
+    $ext = strtolower(substr($_FILES['arquivo']['name'], -4)); //Pegando extensão do arquivo
+    $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+    $dir = '../posts/'; //Diretório para uploads
 
-set_time_limit(0);
-$nome_arquivo = $_FILES['arquivo']['name'];
-$tamanho_arquivo = $_FILES['arquivo']['size'];
-$arquivo_temporario = $_FILES['arquivo']['tmp_name'];
+    move_uploaded_file($_FILES['arquivo']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
 
-
-echo "$nome_arquivo";
-
-if (!empty($nome_arquivo)) {
-
-    if ($sobrescrever == "nao" && file_exists("$caminho_absoluto"+"/$nome_arquivo"+"_"+"$nome"+"_"+"$usuario")) {
-        die("arquivo já existe");
-    }
-    $ext = strrchr($nome_arquivo, '.');
-
-    if ($limitar_ext == "sim" && !in_array($ext, $extensoes_validas)) {
-        die("Invalido");
-    }
-
-    if (move_uploaded_file($arquivo_temporario, "$caminho_absoluto/posts/$arquivo_temporario"+"_"+"$nome"+"_"+"$usuario")) {
-        echo 'sucesso!';
-        $caminho = "$caminho_absoluto/posts/$arquivo_temporario"+"_"+"$nome"+"_"+"$usuario";
-    }
+    $file = $dir . $new_name;
+}else{
+    echo 'Não deu certo!';
 }
+
+
+
+$evento = new Evento($nome, $descricao, $file, $custo, $preco, $cidade, $endereco, $usuario);
+
+EventoDAO::inserir($evento);
+
+

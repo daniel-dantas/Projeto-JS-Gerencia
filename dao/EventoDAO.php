@@ -10,20 +10,24 @@ abstract class EventoDAO {
     public static function inserir(Evento $evento){
         
         try {
-
+            include '../connection/ConnectionFactory.php';
             $conn = getConnection();
 
-            $stmt = $conn->prepare('INSERT INTO evento (usuario,nome, descricao, file, opcao, preco) VALUES (?,?,?,?,?,?)');
+            $stmt = $conn->prepare('INSERT INTO evento (usuario,nome, descricao, file, opcao, endereco, cidade, preco) VALUES (?,?,?,?,?,?,?,?)');
 
             $stmt->bindValue(1, $evento->getUsuario());
             $stmt->bindValue(2, $evento->getNome());
             $stmt->bindValue(3, $evento->getDescricao());
             $stmt->bindValue(4, $evento->getFile());
-            $stmt->bindValue(5, $evento->getFile());
-            $stmt->bindValue(6, $evento->getOpcao());
-            $stmt->bindValue(7, $evento->getPreco());
+            $stmt->bindValue(5, $evento->getOpcao());
+            $stmt->bindValue(6, $evento->getEndereco());
+            $stmt->bindValue(7, $evento->getCidade());
+            $stmt->bindValue(8, $evento->getPreco());
 
             if ($stmt->execute()) {
+                
+                header('location: ../views/home.php');
+                
                 ?>
                 
                     <script>
@@ -31,7 +35,7 @@ abstract class EventoDAO {
                     </script>
                     
                 <?php
-                header('location: ../views/home.php');
+                
             } else {
                 
                 
