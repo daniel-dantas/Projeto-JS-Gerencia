@@ -4,9 +4,34 @@
         <title>New Event</title>
         <link rel="stylesheet" href="../css/materialize.css">
         <link rel="stylesheet" href="../css/criarevento.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta charset="utf-8">
     </head>
-    <body class="valign-wrapper">
+    <body>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="">Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="logout.php">Sair</a></li>
+        </ul>
+        <nav class="nav-extended color indigo darken-2">
+            <div class="nav-wrapper ">
+                <a href="#" class="brand-logo center">Event Divulgation</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="home.php">Inicio</a></li>
+                    <li><a href="#">Meus eventos</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opções de Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="home.php">Inicio</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="logout.php">Sair</a></li>
+        </ul>
         <!--COLOCAR UM TAMANHO MÁX DE CARACTERES NO TEXT AREA
                 OBS: O NATURAL DO MATERIALIZE CONTA QUEBRAS DE LINHA COMO UM CARACTERE-->
         <div class="container">
@@ -17,20 +42,29 @@
                     <div class="
                          row"></div>
                     <center><img class="responsive-img" src="../images/new-product.png"></center>
-                    <form>
+                    <form action="criarevento.php" method="POST" enctype="multipart/form-data" >
                         <div class="input-field col m10 offset-m1">
-                            <input id="Nome" name="Nome" type="text" class="validate" oninput="">
+                            <input id="Nome" name="nome" type="text" class="validate" oninput="">
                             <label for="Nome">Nome do Evento</label>
                         </div>
                         <div class="input-field col m10 offset-m1">
-                            <textarea id="descricao" class="materialize-textarea"></textarea>
+                            <textarea id="descricao" name="descricao" class="materialize-textarea"></textarea>
                             <label for="descricao">Descrição</label>
+                        </div>
+                        <div class="input-field col m10 offset-m1">
+                            <input id="cidade" name="cidade" type="text" class="validate" oninput="">
+                            <label for="cidade">Cidade</label>
+                        </div>
+                        <div class="input-field col m10 offset-m1">
+                            <input id="endereco" name="endereco" type="text" class="validate" oninput="">
+                            <label for="endereco">Endereço</label>
                         </div>
                         <div class="col m10 offset-m1">
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+                                    <input name="arquivo" type="file">
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">
@@ -39,28 +73,44 @@
                         </div>
                         <div class="col m1 offset-m3">
                             <label>
-                                <input onchange="opcaoDoPreco()" class="with-gap" name="custo" type="radio" checked />
+                                <input onchange="opcaoDoPreco()"class="with-gap" value="Grátis" name="custo" type="radio" checked />
                                 <span>Grátis</span>
                             </label>
                         </div>
                         <div class="col m1 offset-m3">
                             <label>
-                                <input onchange="opcaoDoPreco()" class="with-gap" name="custo" type="radio" />
+                                <input onchange="opcaoDoPreco()" class="with-gap" value="Pago" name="custo" type="radio" />
                                 <span>Pago</span>
                             </label>
                         </div>
+                        <div class="row"></div>
+                        <div class="col m12 offset-m5">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Criar</button>
+                        </div>
                     </form>
-                    <div class="row"></div>
-                    <div class="col m12 offset-m5">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Criar</button>
-                    </div>
+
                     <div class="row"></div>
                 </div>
             </div>
         </div>
+
         <!--COLOCAR CRÉDITOS DO AUTOR DA IMAGEM-->
         <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
-        <script src="../js/materialize.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="../js/criarevento.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script>
+            $(".dropdown-trigger").dropdown();
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
     </body>
 </html>

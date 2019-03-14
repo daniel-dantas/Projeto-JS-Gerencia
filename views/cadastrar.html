@@ -29,15 +29,19 @@
                                 <input name="sobrenome" id="sobrenome" type="text" class="validate" oninput="verificacao()">
                                 <label for="sobrenome">Sobrenome</label>
                             </div>
-                            <div class="input-field col s12 m6">
+                            <div class="input-field col s12">
                                 <input name="usuario" id="usuario" type="text" class="validate" oninput="verificacao()">
                                 <label for="usuario">Usuario</label>
                             </div>
-                            <div class="input-field col s12 m6">
+                            <div class="input-field col s12">
                                 <input name="senha" id="senha" type="password" class="validate" oninput="verificacao()">
                                 <label for="senha">Senha</label>
                             </div>
-                            <div class="input-field col s12 m12">
+                            <div class="input-field col s12 ">
+                                <input name="senha" id="confirmarSenha" type="password" class="validate" oninput="verificacao()">
+                                <label for="confirmarSenha">Confirme a senha</label>
+                            </div>
+                            <div class="input-field col s12">
                                 <input name="email" id="email" type="email" class="validate" oninput="verificacao()">
                                 <label for="email">E-mail</label>
                             </div>
@@ -52,8 +56,13 @@
                         </div>
                     <div class="col s12 m1"></div>
                     </div>
-
-                    <center><button id="cadastrar" class="waves-effect waves-light indigo darken-4 btn disabled" type="submit">Cadastrar</button></center>
+                    
+                    <center>
+                        
+                        <button id="cadastrar" class="waves-effect waves-light indigo darken-4 btn disabled" type="submit">Cadastrar</button><br>
+                        <br>
+                        <a class="link" href="../index.html">Voltar</a>
+                    </center>
 
                 </div>
             </form>

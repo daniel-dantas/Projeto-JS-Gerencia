@@ -25,13 +25,13 @@ abstract class UsuarioDAO {
             $stmt->bindValue(7, $usuario->getSenha());
 
             if ($stmt->execute()) {
-                setcookie("nome", $dados['nome']);
-                setcookie("sobrenome", $dados['sobrenome']);
-                setcookie("cidade", $dados['cidade']);
-                setcookie("estado", $dados['estado']);
-                setcookie("email", $dados['email']);
-                setcookie("usuario", $dados['usuario']);
-                setcookie("senha", $dados['senha']);
+                setcookie("nome", $usuario->getNome());
+                setcookie("sobrenome", $usuario->getSobrenome());
+                setcookie("cidade", $usuario->getCidade());
+                setcookie("estado", $usuario->getEstado());
+                setcookie("email", $usuario->getEmail());
+                setcookie("username", $usuario->getUsuario());
+                setcookie("senha", $usuario->getSenha());
                 header('location: ../views/home.php');
             } else {
                 

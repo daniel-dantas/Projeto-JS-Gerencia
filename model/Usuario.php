@@ -11,6 +11,7 @@ class Usuario {
     private $usuario;
     private $senha;
     
+    
     function __construct($nome, $sobrenome, $cidade, $estado, $email, $usuario, $senha) {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
