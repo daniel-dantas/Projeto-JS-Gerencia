@@ -2,9 +2,11 @@ img {
 	max-height: 300px;
 }
 
-body{
-	background-image: url(../images/wallhaven-727431.jpg);
+#inicio, #meuseventos{
+  background-image: url(../images/wallhaven-727431.jpg);
+  margin: 0;
 }
+
 .cont{
 	margin-top: 20px;
 }

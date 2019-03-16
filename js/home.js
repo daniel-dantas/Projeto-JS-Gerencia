@@ -1,9 +1,10 @@
 function carregarDados () {
-  document.getElementById('corpo-principal').innerHTML += estrutura()
+  document.getElementsByClassName('corpo-principal')[0].innerHTML += estrutura()
+  document.getElementsByClassName('corpo-principal')[1].innerHTML += estrutura()
 }
 
 function estrutura () {
-  var retorno = '<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'
+  var retorno = '<div class="card large z-depth-3"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'
   retorno += 'https://s.calendarr.com/upload/08/96/carnaval-f.png?t=1551409211'
   retorno += '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">'
   retorno += 'Nome do evento'
