@@ -9,6 +9,7 @@
     </head>
     <body>
         <ul id="dropdown1" class="dropdown-content">
+            <li><a href="home.php">Página Inicial</a></li>
             <li><a href="">Perfil</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sair</a></li>
@@ -18,16 +19,13 @@
                 <a href="#" class="brand-logo center">Event Divulgation</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="home.php">Inicio</a></li>
-                    <li><a href="#">Meus eventos</a></li>
-                    <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opções de Conta<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
             </div>
 
         </nav>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="home.php">Inicio</a></li>
+            <li><a href="home.php">Página Inicial</a></li>
             <li><a href="#">Perfil</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sair</a></li>
@@ -44,8 +42,8 @@
                     <center><img class="responsive-img" src="../images/new-product.png"></center>
                     <form action="criarevento.php" method="POST" enctype="multipart/form-data" >
                         <div class="input-field col m10 offset-m1">
-                            <input id="Nome" name="nome" type="text" class="validate" oninput="">
-                            <label for="Nome">Nome do Evento</label>
+                            <input id="nome" name="nome" type="text" class="validate" oninput="">
+                            <label for="nome">Nome do Evento</label>
                         </div>
                         <div class="input-field col m10 offset-m1">
                             <textarea id="descricao" name="descricao" class="materialize-textarea"></textarea>
@@ -59,10 +57,18 @@
                             <input id="endereco" name="endereco" type="text" class="validate" oninput="">
                             <label for="endereco">Endereço</label>
                         </div>
+                        <div class="input-field col m10 offset-m1">
+                            <input id="data" type="text" class="datepicker">
+                            <label for="data">Data</label>
+                        </div>
+                        <div class="input-field col m10 offset-m1">
+                            <input id="hora" type="text" class="timepicker">
+                            <label for="data">Horário</label>
+                        </div>
                         <div class="col m10 offset-m1">
                             <div class="file-field input-field">
                                 <div class="btn">
-                                    <span>File</span>
+                                    <span>Imagem</span>
                                     <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
                                     <input name="arquivo" type="file">
                                 </div>
@@ -84,11 +90,10 @@
                             </label>
                         </div>
                         <div class="row"></div>
-                        <div class="col m12 offset-m5">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Criar</button>
-                        </div>
                     </form>
-
+                    <div class="col m12 offset-m5">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Criar</button>
+                    </div>
                     <div class="row"></div>
                 </div>
             </div>
@@ -96,9 +101,9 @@
 
         <!--COLOCAR CRÉDITOS DO AUTOR DA IMAGEM-->
         <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+        <script src="../js/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="../js/criarevento.js"></script>
-        <script src="../js/jquery.js"></script>
         <script>
             $(".dropdown-trigger").dropdown();
             document.addEventListener('DOMContentLoaded', function () {
@@ -106,10 +111,12 @@
                 var instances = M.Sidenav.init(elems, options);
             });
 
-            // Or with jQuery
+            $(document).ready(function(){
+                $('.datepicker').datepicker();
+            });
 
-            $(document).ready(function () {
-                $('.sidenav').sidenav();
+            $(document).ready(function(){
+                $('.timepicker').timepicker();
             });
         </script>
     </body>
