@@ -12,10 +12,11 @@ class Evento {
     private $usuario;
     private $cidade;
     private $endereco;
+    private $hora;
+    private $data;
     
     
-    
-    function __construct($nome, $descricao, $file, $opcao, $preco, $cidade, $endereco, $usuario) {
+    function __construct($nome, $descricao, $file, $opcao, $preco, $cidade, $endereco, $usuario, $hora, $data) {
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->file = $file;
@@ -24,7 +25,27 @@ class Evento {
         $this->cidade = $cidade;
         $this->endereco = $endereco;
         $this->usuario = $usuario;
+        $this->hora = $hora;
+        $this->data = $data;
     }
+    
+    function getHora() {
+        return $this->hora;
+    }
+
+    function getData() {
+        return $this->data;
+    }
+
+    function setHora($hora) {
+        $this->hora = $hora;
+    }
+
+    function setData($data) {
+        $this->data = $data;
+    }
+
+        
     
     function getCidade() {
         return $this->cidade;

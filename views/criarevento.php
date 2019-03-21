@@ -1,6 +1,5 @@
 <?php
 
-include '../util/config_upload.php';
 require_once '../dao/EventoDAO.php';
 
 
@@ -19,6 +18,8 @@ $usuario = $_COOKIE["username"];
 $cidade = $_POST["cidade"];
 $endereco = $_POST["endereco"];
 $custo = $_POST["custo"];
+$hora = $_POST["hora"];
+$data = $_POST["data"];
 $file;
 
 if (isset($_FILES['arquivo'])) {
@@ -37,7 +38,7 @@ if (isset($_FILES['arquivo'])) {
 
 
 
-$evento = new Evento($nome, $descricao, $file, $custo, $preco, $cidade, $endereco, $usuario);
+$evento = new Evento($nome, $descricao, $file, $custo, $preco, $cidade, $endereco, $usuario, $hora, $data);
 
 EventoDAO::inserir($evento);
 

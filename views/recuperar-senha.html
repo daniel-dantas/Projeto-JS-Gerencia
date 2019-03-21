@@ -8,21 +8,23 @@
     <body class="indigo darken-4 valign-wrapper">
         <div class="container">
             <div class="container">
-                <div class="row indigo lighten-5">
-                    <div class="row"></div>
-                    <div class="col m7 offset-m5"><img class="responsive-img" src="../images/question.png"></div>
-                    <div class="input-field col m4 offset-m4">
-                        <input id="userName" name="userName" type="text" class="validate" oninput="verificacao()">
-                        <label for="userName">user name</label>
-                    </div>
-                    <div class="col s7 m7 l7 offset-m5 offset-l4">
-                        <button id="button" type="submit" class="waves-effect waves-light indigo darken-4 btn  disabled">solicitar nova senha</button>
-                        <br>
-                        <br>
-                        <a class="link" href="../index.html">Voltar</a><br><br>
-                    </div>
+                <form action="recuperar-senha.php" method="POST">
+                    <div class="row indigo lighten-5">
+                        <div class="row"></div>
+                        <div class="col m7 offset-m5"><img class="responsive-img" src="../images/question.png"></div>
+                        <div class="input-field col m4 offset-m4">
+                            <input id="userName" name="userName" type="text" class="validate" oninput="verificacao()">
+                            <label for="userName">user name</label>
+                        </div>
+                        <div class="col s7 m7 l7 offset-m5 offset-l4">
+                            <button id="button" type="submit" class="waves-effect waves-light indigo darken-4 btn  disabled">solicitar nova senha</button>
+                            <br>
+                            <br>
+                            <a class="link" href="../index.html">Voltar</a><br><br>
+                        </div>
 
-                </div>
+                    </div>
+                </form>
             </div>
             <div class="row"></div>
         </div>

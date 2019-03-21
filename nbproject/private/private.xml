@@ -3,23 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/model/Usuario.php</file>
+            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/criarevento.php</file>
             <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/model/Evento.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/js/home.js</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/dao/UsuarioDAO.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/util/upload.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/criarevento.html</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/util/validacao_cookies.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/login.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/css/estilo.css</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/util/config_upload.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/logout.php</file>
             <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/home.php</file>
             <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/dao/EventoDAO.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/cadastrar.html</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/cadastrar.php</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/js/criarevento.js</file>
-            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/index.html</file>
+            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/criarevento.html</file>
+            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/teste.php</file>
+            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/views/login.php</file>
+            <file>file:/C:/xampp/htdocs/Projeto-JS-Gerencia/connection/ConnectionFactory.php</file>
         </group>
     </open-files>
 </project-private>
