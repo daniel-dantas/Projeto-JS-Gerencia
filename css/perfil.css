@@ -1,0 +1,11 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-image: url(../images/wallhaven-727431.jpg);
+	background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
