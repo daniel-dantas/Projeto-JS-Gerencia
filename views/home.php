@@ -8,7 +8,10 @@ include "../util/validacao_cookies.php";
 
 require_once '../dao/EventoDAO.php';
 
-$meusEventos = EventoDAO::buscarEventosUsuario($_COOKIE["username"]);
+$resultado = EventoDAO::buscarEventosUsuario($_COOKIE["username"]);
+
+$meusEventos = array_reverse($resultado);
+
 ?>
 
 
@@ -171,7 +174,7 @@ $meusEventos = EventoDAO::buscarEventosUsuario($_COOKIE["username"]);
                 retorno = "";
                     <?php if (count($meusEventos) == 0) { ?>
 
-                    retorno = '<h4>Você ainda não cadastrou nenhum evento!</h4>'
+                    retorno = '<center><h4>Você ainda não cadastrou nenhum evento!</h4></center>'
 
                     <?php } else {?>
 
@@ -191,7 +194,7 @@ $meusEventos = EventoDAO::buscarEventosUsuario($_COOKIE["username"]);
                         retorno += '<i class="material-icons right">close</i></span><p>'
                         retorno += 'Usuario: <a href="#"><?php echo $evento["usuario"]; ?></a><?php echo "<br><br>Data: " . $evento["data"] . "<br><br> Horario: " . $evento["horario"] ?>'
                         retorno += '<?php "<br><br>Cidade: ".$evento["cidade"]."<br><br>Endereço: ".$evento["endereco"]; ?>'
-                        retorno += '</p></div></div></div>'
+                        retorno += '</p></div></div></div><br>'
                         <?php } ?>
                     <?php } ?>
                 document.getElementById("meus-eventos").innerHTML = retorno;
