@@ -11,3 +11,19 @@ function verificacao() {
 		button.className = button.className.replace(' disabled','')
 	}
 }
+
+function geolocalizacao () {
+    $.ajax({
+        url: "https://geoip-db.com/jsonp",
+        jsonpCallback: "callback",
+        dataType: "jsonp",
+        success: function( location ) {
+        	var estado = document.getElementById('estado')
+        	estado.value = location.state
+        	estado.parentNode.lastElementChild.className = 'active'
+        	var cidade = document.getElementById('cidade')
+        	cidade.value = location.city
+        	cidade.parentNode.lastElementChild.className = 'active'
+        }
+    });
+}
