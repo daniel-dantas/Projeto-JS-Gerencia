@@ -63,5 +63,19 @@ abstract class EventoDAO {
 
         return $dadosEventos;
     }
+    
+    public static function buscarEventosCidade($cidade) {
+
+        
+        $conn = getConnection();
+        
+        $busca = $conn->prepare("SELECT * FROM evento WHERE cidade='$cidade'");
+        $busca->execute();
+
+        $dadosEventos = $busca->fetchAll();
+
+        return $dadosEventos;
+    }
+    
 
 }

@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Event Divulgation &COPY;</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/materialize.css" />
-</head>
+    <head>
+        <title>Event Divulgation &COPY;</title>
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/materialize.css" />
+    </head>
 
-<body class="indigo darken-4 valign-wrapper">
-    <form action="views/login.php" class="container" method="POST">
-        <div class="row">
+    <body class="indigo darken-4 valign-wrapper" onload="getLocalizacao()">
+        <form action="views/login.php" class="container" method="POST">
+            <div class="row">
 
-            <div class="col s12 m4"></div>
-            <div class="col s12 m4">
-                <div class="row indigo lighten-5">
+                <div class="col s12 m4"></div>
+                <div class="col s12 m4">
+                    <div class="row indigo lighten-5">
 
-                    <center><img class="responsive-img" src="images/enter.png"></center>
+                        <center><img class="responsive-img" src="images/enter.png"></center>
 
-                    <div class="row">
+                        <div class="row">
 
-                        <div class="col s1"></div>
-
-
-                        <div class="col s10">
+                            <div class="col s1"></div>
 
 
-                            <div class="input-field col s12 ">
-                                <input id="userName" name="userName" type="text" class="validate"
-                                    oninput="verificacao()">
-                                <label for="userName">user name</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="password" name="password" type="password" class="validate"
-                                    oninput="verificacao()">
-                                <label for="password">password</label>
-                            </div>
-                            <br>
-                            <br>
-                            <center><button id="button" type="submit"
-                                    class="waves-effect waves-light indigo darken-4 btn  disabled">entrar</button>
-                            </center>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <center>
-                                    <div class="col s12 m6">
-                                        <a href="views/cadastrar.html">Cadastra-se</a>
-                                    </div>
-                                    <div class="col s12 m6">
-                                        <a href="views/recuperar-senha.html">Recuperar senha</a>
-                                    </div>
+                            <div class="col s10">
+
+
+                                <div class="input-field col s12 ">
+                                    <input id="userName" name="userName" type="text" class="validate"
+                                           oninput="verificacao()">
+                                    <label for="userName">user name</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="password" name="password" type="password" class="validate"
+                                           oninput="verificacao()">
+                                    <label for="password">password</label>
+                                </div>
+                                <br>
+                                <br>
+                                <center><button id="button" type="submit"
+                                                class="waves-effect waves-light indigo darken-4 btn  disabled">entrar</button>
                                 </center>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <center>
+                                        <div class="col s12 m6">
+                                            <a href="views/cadastrar.html">Cadastra-se</a>
+                                        </div>
+                                        <div class="col s12 m6">
+                                            <a href="views/recuperar-senha.html">Recuperar senha</a>
+                                        </div>
+                                    </center>
+                                </div>
+
                             </div>
 
+
+
+                            <div class="col s1"></div>
                         </div>
 
-
-
-                        <div class="col s1"></div>
                     </div>
-
                 </div>
+                <div class="col s12 m4"></div>
             </div>
-            <div class="col s12 m4"></div>
-        </div>
-    </form>
-    <script src="js/login.js"></script>
-    <script src="js/materialize.js"></script>
-    <!--TEM QUE COLOCAR ISSO-->
-    <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
-</body>
+        </form>
+        
+        <script src="js/jquery.js"></script>
+        <script src="js/geoLocalizacao.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/materialize.js"></script>
+
+        <!--TEM QUE COLOCAR ISSO-->
+        <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+    </body>
 
 </html>

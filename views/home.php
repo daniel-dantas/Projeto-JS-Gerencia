@@ -9,8 +9,13 @@ include "../util/validacao_cookies.php";
 require_once '../dao/EventoDAO.php';
 
 $resultado = EventoDAO::buscarEventosUsuario($_COOKIE["username"]);
-
 $meusEventos = array_reverse($resultado);
+
+$eventosProximos = EventoDAO::buscarEventosCidade($_COOKIE["cidadeGeo"]);
+$feed = array_reverse($eventosProximos);
+
+
+
 
 ?>
 
@@ -27,14 +32,11 @@ $meusEventos = array_reverse($resultado);
         <meta charset="UTF-8">
     </head>
 
-    <body onload="carregarDados()">
-
-
-
+    <body onload=" carregarDadosEventosProximos(); carregarDadosMeusEventos() ">
 
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="home.php">Página Inicial</a></li>
-            <li><a href="">Perfil</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
@@ -169,8 +171,43 @@ $meusEventos = array_reverse($resultado);
             });</script>
 <!--        <script src="../js/home.js"></script>-->
         <script>
+            
+            function carregarDadosEventosProximos(){
+                
+                retorno = "";
+                    <?php if (count($feed) == 0) { ?>
 
-            function carregarDados() {
+                    retorno = '<center><h4>Você ainda não cadastrou nenhum evento!</h4></center>'
+
+                    <?php } else {?>
+
+
+                        <?php foreach ($feed as $evento) { ?>
+                        retorno += '<div class="card large z-depth-3"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'
+                        retorno += '<?php echo $evento["file"]; ?>'
+                        retorno += '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">'
+                        retorno += '<?php echo $evento["nome"]; ?>'
+                        retorno += '<i class="material-icons right">more_vert</i></span><p>'
+                        retorno += '<?php echo $evento["descricao"] . "<br><br>Categoria: " . $evento["opcao"]; ?>'
+                        <?php if($evento["opcao"] == "Pago"){?>
+                        retorno += '<?php echo " | Preço: ".$evento["preco"] ?>';
+                        <?php } ?>
+                        retorno += '</p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">'
+                        retorno += '<?php echo $evento["nome"]; ?>'
+                        retorno += '<i class="material-icons right">close</i></span><p>'
+                        retorno += 'Usuario: <a href="#"><?php echo $evento["usuario"]; ?></a><?php echo "<br><br>Data: " . $evento["data"] . "<br><br> Horario: " . $evento["horario"] ?>'
+                        retorno += '<?php echo "<br><br>Cidade: ".$evento["cidade"]."<br><br>Endereço: ".$evento["endereco"]; ?>'
+                        retorno += '</p></div></div></div><br>'
+                        <?php } ?>
+                    <?php } ?>
+                document.getElementById("eventos-proximos").innerHTML = retorno;
+                
+                
+                
+            }
+            
+            
+            function carregarDadosMeusEventos() {
                 retorno = "";
                     <?php if (count($meusEventos) == 0) { ?>
 
@@ -193,7 +230,7 @@ $meusEventos = array_reverse($resultado);
                         retorno += '<?php echo $evento["nome"]; ?>'
                         retorno += '<i class="material-icons right">close</i></span><p>'
                         retorno += 'Usuario: <a href="#"><?php echo $evento["usuario"]; ?></a><?php echo "<br><br>Data: " . $evento["data"] . "<br><br> Horario: " . $evento["horario"] ?>'
-                        retorno += '<?php "<br><br>Cidade: ".$evento["cidade"]."<br><br>Endereço: ".$evento["endereco"]; ?>'
+                        retorno += '<?php echo "<br><br>Cidade: ".$evento["cidade"]."<br><br>Endereço: ".$evento["endereco"]; ?>'
                         retorno += '</p></div></div></div><br>'
                         <?php } ?>
                     <?php } ?>
