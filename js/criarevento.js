@@ -13,7 +13,8 @@ function opcaoDoPreco() {
             newinput.id = 'novoinput'
             newinput.className = 'input-field col m10 offset-m1'
             newinput.innerHTML = '<input id="preco" name="preco" type="text" class="validate" oninput=""><label for="preco">Preço</label>'
-            document.getElementsByTagName('form')[0].appendChild(newinput)
+            var formulario = document.getElementsByTagName('form')[0]
+            formulario.insertBefore(newinput, formulario.childNodes[18])
             gambiarra = 1
         }
     }
