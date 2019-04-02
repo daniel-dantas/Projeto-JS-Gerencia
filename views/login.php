@@ -12,11 +12,13 @@ $resultado = mysqli_query($con, "SELECT * FROM usuario WHERE username='$userName
 $linhas = mysqli_num_rows($resultado);
 
 if ($linhas == 0) {
-    echo 'Usuario não encontrado';
+    setcookie("token","erro");
+    header("Location: ../index.html");
 } else {
     $dados = mysqli_fetch_array($resultado);
     if ($password != $dados['senha']) {
-        echo 'Senha incorreta';
+        setcookie("token","erro");
+        header("Location: ../index.html");
     } else {
         
         setcookie("nome", $dados['nome']);
@@ -26,7 +28,7 @@ if ($linhas == 0) {
         setcookie("email", $dados['email']);
         setcookie("username", $dados['username']);
         setcookie("senha", $dados['senha']);
-
+        setcookie("perfil", $dados["perfil"]);
         header("Location: home.php");
     }
 }

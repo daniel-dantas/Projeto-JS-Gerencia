@@ -10,6 +10,7 @@ class Usuario {
     private $email;
     private $usuario;
     private $senha;
+    private $perfil;
     
     
     function __construct($nome, $sobrenome, $cidade, $estado, $email, $usuario, $senha) {
@@ -20,6 +21,14 @@ class Usuario {
         $this->email = $email;
         $this->usuario = $usuario;
         $this->senha = $senha;
+    }
+    
+    function getPerfil() {
+        return $this->perfil;
+    }
+
+    function setPerfil($perfil) {
+        $this->perfil = $perfil;
     }
     
     function getUsuario() {

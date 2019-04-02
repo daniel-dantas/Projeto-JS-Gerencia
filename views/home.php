@@ -36,7 +36,7 @@ $feed = array_reverse($eventosProximos);
 
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="home.php">Página Inicial</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
@@ -46,7 +46,7 @@ $feed = array_reverse($eventosProximos);
 
         <nav class="nav-extended color indigo darken-2">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Event Divulgation</a>
+                <a href="#" class="brand-logo center">Event Divulgation</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opções de Conta<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -138,8 +138,8 @@ $feed = array_reverse($eventosProximos);
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Desenvolvedores</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Ruan Miguel (Front-end)</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Daniel Dantas (Back-end)</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://github.com/Ruan-Miguel">Ruan Miguel (Front-end)</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://github.com/XSrDanDanX">Daniel Dantas (Back-end)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ $feed = array_reverse($eventosProximos);
                 retorno = "";
                     <?php if (count($feed) == 0) { ?>
 
-                    retorno = '<center><h4>Você ainda não cadastrou nenhum evento!</h4></center>'
+                    retorno = '<center><h4>Não há nenhum evento próximo!</h4></center>'
 
                     <?php } else {?>
 
@@ -212,14 +212,13 @@ $feed = array_reverse($eventosProximos);
                     <?php if (count($meusEventos) == 0) { ?>
 
                     retorno = '<center><h4>Você ainda não cadastrou nenhum evento!</h4></center>'
-
+                    
                     <?php } else {?>
 
-
-                        <?php foreach ($meusEventos as $evento) { ?>
-                        retorno += '<div class="card large z-depth-3"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'
-                        retorno += '<?php echo $evento["file"]; ?>'
-                        retorno += '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">'
+                        <?php foreach ($meusEventos as $evento) {  ?>
+                        retorno += '<form method="POST" action="teste.php"><div class="card large z-depth-3"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'
+                        retorno += '<?php echo $evento["file"];?>'
+                        retorno += '"></div><div class="card-content"><span id="nomeEvento<?"class="card-title activator grey-text text-darken-4">'
                         retorno += '<?php echo $evento["nome"]; ?>'
                         retorno += '<i class="material-icons right">more_vert</i></span><p>'
                         retorno += '<?php echo $evento["descricao"] . "<br><br>Categoria: " . $evento["opcao"]; ?>'
@@ -231,13 +230,16 @@ $feed = array_reverse($eventosProximos);
                         retorno += '<i class="material-icons right">close</i></span><p>'
                         retorno += 'Usuario: <a href="#"><?php echo $evento["usuario"]; ?></a><?php echo "<br><br>Data: " . $evento["data"] . "<br><br> Horario: " . $evento["horario"] ?>'
                         retorno += '<?php echo "<br><br>Cidade: ".$evento["cidade"]."<br><br>Endereço: ".$evento["endereco"]; ?>'
-                        retorno += '</p></div></div></div><br>'
+                        retorno += '</p><button type="submit" class="btn indigo darken-4"><i class="material-icons">delete</i></button></div></div></div><br></form>'
+                        
                         <?php } ?>
                     <?php } ?>
                 document.getElementById("meus-eventos").innerHTML = retorno;
             }
 
-
+            function pegarInformacao(){
+                
+            }
         </script>
     </body>
 

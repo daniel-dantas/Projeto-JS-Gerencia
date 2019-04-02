@@ -67,8 +67,8 @@
                         </div>
                         <div class="col m10 offset-m1">
                             <div class="file-field input-field">
-                                <div class="btn">
-                                    <span>Imagem</span>
+                                <div class="btn indigo darken-4">
+                                    <span >Imagem</span>
                                     <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
                                     <input name="arquivo" type="file">
                                 </div>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="row"></div>
                         <div class="col m12 offset-m5">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Criar</button>
+                            <button class="btn indigo darken-4 waves-effect waves-light" type="submit" name="action">Criar</button>
                         </div>
                     </form>
                     <div class="row"></div>
@@ -99,25 +99,51 @@
             </div>
         </div>
 
+        <footer class="page-footer indigo darken-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Event Divulgation</h5>
+                        <p class="grey-text text-lighten-4">Divulgue seus eventos no maior aplicativo de eventos de todos os
+                            tempos</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Desenvolvedores</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Ruan Miguel (Front-end)</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Daniel Dantas (Back-end)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2019 Event Divulgation
+
+                </div>
+            </div>
+        </footer>
+
+
         <!--COLOCAR CRÉDITOS DO AUTOR DA IMAGEM-->
         <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
         <script src="../js/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="../js/criarevento.js"></script>
         <script>
-            $(".dropdown-trigger").dropdown();
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.sidenav');
-                var instances = M.Sidenav.init(elems, options);
-            });
+                                    $(".dropdown-trigger").dropdown();
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var elems = document.querySelectorAll('.sidenav');
+                                        var instances = M.Sidenav.init(elems, options);
+                                    });
 
-            $(document).ready(function(){
-                $('.datepicker').datepicker();
-            });
+                                    $(document).ready(function () {
+                                        $('.datepicker').datepicker();
+                                    });
 
-            $(document).ready(function(){
-                $('.timepicker').timepicker();
-            });
+                                    $(document).ready(function () {
+                                        $('.timepicker').timepicker();
+                                    });
         </script>
     </body>
 </html>

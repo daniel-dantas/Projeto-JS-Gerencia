@@ -1,16 +1,16 @@
 html {
-	height: 100%;
+    height: 100%;
 }
 
 body{
-	background-image: url(../images/wallhaven-727431.jpg);
-	background-repeat: round;
-	height: 100%;
+    background-image: url(../images/wallhaven-727431.jpg);
+    background-repeat: round;
+    height: 100%;
 }
 
 a{
-	cursor: pointer;
+    cursor: pointer;
 }
 img.responsive-img{
-	margin-top: 50px;
+    margin-top: 50px;
 }

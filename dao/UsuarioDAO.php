@@ -45,20 +45,45 @@ abstract class UsuarioDAO {
         }
     }
 
-    public static function verificarUserName($userName) {
-    
-        $conn = getConnection();
+    public static function update(Usuario $usuario) {
 
-        $consulta = $conn->query("SELECT * FROM usuario WHERE usuario=$userName;");
-        
-        if(empty($consulta)){
-            return true;
-        }else{
-            return false;
+
+        try {
+
+            $conn = getConnection();
+
+            $stmt = $conn->prepare('UPDATE usuario SET nome=?, sobrenome=?, cidade=?, estado=?, email=?, senha=?, perfil=? WHERE username=?');
+
+            $stmt->bindValue(1, $usuario->getNome());
+            $stmt->bindValue(2, $usuario->getSobrenome());
+            $stmt->bindValue(3, $usuario->getCidade());
+            $stmt->bindValue(4, $usuario->getEstado());
+            $stmt->bindValue(5, $usuario->getEmail());
+            $stmt->bindValue(6, $usuario->getSenha());
+            $stmt->bindValue(7, $usuario->getPerfil());
+            $stmt->bindValue(8, $usuario->getUsuario());
+            
+
+            if ($stmt->execute()) {
+                setcookie("nome", $usuario->getNome());
+                setcookie("sobrenome", $usuario->getSobrenome());
+                setcookie("cidade", $usuario->getCidade());
+                setcookie("estado", $usuario->getEstado());
+                setcookie("email", $usuario->getEmail());
+                setcookie("username", $usuario->getUsuario());
+                setcookie("senha", $usuario->getSenha());
+                setcookie("perfil", $usuario->getPerfil());
+                header('location: ../views/home.php');
+            } else {
+                
+                
+                header('location: ../views/edicao.php');
+                
+                
+            }
+        } catch (PDOException $ex) {
+            $ex->getMessage();
         }
-        
     }
-    
-   
     
 }
