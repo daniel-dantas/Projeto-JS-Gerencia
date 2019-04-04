@@ -99,7 +99,7 @@ $feed = array_reverse($eventosProximos);
                 <div class="card-panel">
                     <div class="row">
                         <div class="col m2 offset-m11">
-                            <a href="criarevento.html" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                            <a href="novoEvento.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
                         </div>
                     </div>
                     <div class="row">

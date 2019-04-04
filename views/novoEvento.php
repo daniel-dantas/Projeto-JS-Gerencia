@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta charset="utf-8">
     </head>
-    <body>
+    <body onload="localizacao()">
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="home.php">Página Inicial</a></li>
             <li><a href="">Perfil</a></li>
@@ -16,7 +16,7 @@
         </ul>
         <nav class="nav-extended color indigo darken-2">
             <div class="nav-wrapper ">
-                <a href="#" class="brand-logo center">Event Divulgation</a>
+                <a href="home.php" class="brand-logo center">Event Divulgation</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opções de Conta<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -26,7 +26,7 @@
         </nav>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="home.php">Página Inicial</a></li>
-            <li><a href="#">Perfil</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
@@ -127,9 +127,11 @@
 
         <!--COLOCAR CRÉDITOS DO AUTOR DA IMAGEM-->
         <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+
         <script src="../js/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="../js/criarevento.js"></script>
+
         <script>
                                     $(".dropdown-trigger").dropdown();
                                     document.addEventListener('DOMContentLoaded', function () {
@@ -144,6 +146,15 @@
                                     $(document).ready(function () {
                                         $('.timepicker').timepicker();
                                     });
+
+
+                                    function localizacao() {
+                                        var cidade = document.getElementById('cidade')
+                                        cidade.value = "<?php echo "".$_COOKIE["cidadeGeo"] ?>"
+                                        cidade.parentNode.lastElementChild.className = 'active'
+                                    }
+
+
         </script>
     </body>
 </html>
