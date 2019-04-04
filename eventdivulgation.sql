@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14-Mar-2019 às 13:35
+-- Generation Time: 04-Abr-2019 às 21:38
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 5.6.40
 
@@ -36,8 +36,20 @@ CREATE TABLE `evento` (
   `opcao` varchar(30) NOT NULL,
   `preco` double(6,2) NOT NULL,
   `cidade` varchar(30) NOT NULL,
-  `endereco` varchar(50) NOT NULL
+  `endereco` varchar(50) NOT NULL,
+  `horario` varchar(40) NOT NULL,
+  `data` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `evento`
+--
+
+INSERT INTO `evento` (`usuario`, `nome`, `descricao`, `file`, `opcao`, `preco`, `cidade`, `endereco`, `horario`, `data`) VALUES
+('xsrdandanx', 'Festa dos Friends', 'Festa para se conhecer novos amigos', '../posts/2019.03.20-23.47.51.jpg', 'GrÃ¡tis', 0.00, 'Cajazeiras', 'PrÃ³ximo ao Jardim oasis', '05:00 PM', 'Mar 21, 2019'),
+('xsrdandanx', 'Show de Humor', 'Show de Humor com Whindersson Nunes', '../posts/2019.03.20-23.58.26.jpg', 'Pago', 50.00, 'Cajazeiras', 'Rua Tal , Centro', '09:59 PM', 'Mar 30, 2019'),
+('xsrdandanx', 'dasdadasd', 'dasdadad', '../posts/2019.03.30-11.58.12.jpg', 'GrÃ¡tis', 0.00, 'IcÃ³', 'CearÃ¡', '06:58 AM', 'Mar 31, 2019'),
+('xsrdandanx', 'Carnaval', 'Tururu', '../posts/2019.04.01-10.31.08.jpg', 'GrÃ¡tis', 0.00, 'Cajazeiras', 'Rua Tal , Centro', '05:30 AM', 'Apr 27, 2019');
 
 -- --------------------------------------------------------
 
@@ -52,16 +64,16 @@ CREATE TABLE `usuario` (
   `estado` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `senha` varchar(20) NOT NULL
+  `senha` varchar(20) NOT NULL,
+  `perfil` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`nome`, `sobrenome`, `cidade`, `estado`, `email`, `username`, `senha`) VALUES
-('Daniel', 'Dantas', 'Ipaumirim', 'Ceará', 'daniel.dantas.ip18@gmail.com', 'dandan', 'deiniel123'),
-('Daniel', 'Dantas', 'Ipaumirim', 'Ceará', 'daniel.dantas.ip18@gmail.com', 'xsrdandanx', '654123');
+INSERT INTO `usuario` (`nome`, `sobrenome`, `cidade`, `estado`, `email`, `username`, `senha`, `perfil`) VALUES
+('Daniel', 'Dantas', 'Ipaumirim', 'CearÃƒÂƒÃ‚ÂƒÃƒÂ‚Ã‚Âƒ', 'daniel.dantas.ip18@gmail.com', 'xsrdandanx', '654123', '../perfis/2019.04.02-09.56.54.jpg');
 
 --
 -- Indexes for dumped tables
