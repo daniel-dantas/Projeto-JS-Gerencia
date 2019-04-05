@@ -67,8 +67,8 @@ $feed = array_reverse($eventosProximos);
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a>Perfil</a></li>
-            <li><a>Sair</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
+            <li><a href="logout.php">Sair</a></li>
         </ul>
 
         <div id="inicio" class="row cont">
@@ -230,7 +230,7 @@ $feed = array_reverse($eventosProximos);
                         retorno += '<i class="material-icons right">close</i></span><p>'
                         retorno += 'Usuario: <a href="#"><?php echo $evento["usuario"]; ?></a><?php echo "<br><br>Data: " . $evento["data"] . "<br><br> Horario: " . $evento["horario"] ?>'
                         retorno += '<?php echo "<br><br>Cidade: ".$evento["cidade"]."<br><br>Endereço: ".$evento["endereco"]; ?>'
-                        retorno += '</p><button type="submit" class="btn indigo darken-4"><i class="material-icons">delete</i></button></div></div></div><br></form>'
+                        retorno += '</p></div></div></div><br></form>'
                         
                         <?php } ?>
                     <?php } ?>
